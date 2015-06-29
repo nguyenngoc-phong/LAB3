@@ -9,12 +9,14 @@ Projet: Laboratoire #3
 Professeur: Francis Cardinal
 Nom du fichier: ArrayIterator.java
 Date crÃ©Ã©: 2015-06-23
-Date dern. modif.: 2015-06-23
+Date dern. modif.: 2015-06-26
 *******************************************************
 Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
+2015-06-26 Ajout des attributs et du constructeur. Remplissage du contrat de l'interface Iterator. Modification du Javadoc.
+2015-06-29 Correction de la méthode hasNext().
 *******************************************************/  
 
 package framework;
@@ -22,42 +24,54 @@ package framework;
 import java.util.Iterator;
 
 /**
- * Description de la classe.
+ * Cette classe représente l'itérateur qui parcoure à travers des tableaux d'objets.
+ * Cette méthode suit le patron itérateur.
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
-public class ArrayIterator implements Iterator<Object> {
+public class ArrayIterator<Object> implements Iterator<Object> {
 
+	private Object[] items;
+	private int position = 0;
+	
 	/**
-	 * Description de la mÃ©thode.
-	 * @param 
-	 * @return 
+	 * Constructeur
+	 * @param items : Le tableau d'objets pour lequel on veut créer un itérateur
+	 */
+	public ArrayIterator(Object[] desItems) {
+		items = desItems;
+	}
+	
+	/**
+	 * Retourne l'existence d'un objet dans le tableau après l'itérateur.
+	 * @return True s'il existe un objet après l'itérateur, autrement False.
 	 */
 	@Override
 	public boolean hasNext() {
-		// TODO Ã‰crire le code dans la mÃ©thode
-		return false;
+		if(position < items.length && items[position + 1] != null) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/**
-	 * Description de la mÃ©thode.
-	 * @param 
-	 * @return 
+	 * Retourne l'objet dans le tableau après l'itérateur.
+	 * @return L'objet après l'itérateur.
 	 */
 	@Override
 	public Object next() {
-		// TODO Ã‰crire le code dans la mÃ©thode
-		return null;
+		position++;
+		return items[position];
 	}
 
 	/**
-	 * Description de la mÃ©thode.
-	 * @param 
-	 * @return 
+	 * Supprime l'objet sur lequel se trouve l'itérateur. 
 	 */
 	@Override
 	public void remove() {
-		// TODO Ã‰crire le code dans la mÃ©thode
+		items[position] = null;
 	}
 
 }
