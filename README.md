@@ -1,3 +1,21 @@
+# MISES À JOUR :
+- 2015-06-23
+  - Ajout du squelette du projet. Certaines modification ont été apportées au niveau des classes par rapport au                   diagramme de classes initial.
+    - Paquets Framework et BungoPlus :
+      - Modification des paramètres de type De et Joueur par AbstractDe et AbstractJoueur respectivement. Comme les classes De et Joueur héritent de ces classes et que les méthodes où se trouvent ces paramètres sont soit dans le Framework ou dans des classes qui héritent de celles du Framework, ce fut plus judicieux de les changer ainsi.
+      - Suppression des méthodes compareTo(T o) de AbstractDe et AbstractJoueur puisque qu'on peut directement implémenter la méthode compareTo() avec le bon type d'objet en paramètre. Donc, pas besoin de surcharger deux fois la méthode. Aussi, suppression des méthodes compareTo() dans AbstractDe et AbstractJoueur puisqu'elles vont être seulement implémenté dans les versions concrètes des classes dans le jeu Bunco+ et non dans le framework directement.
+      - Ajout de la méthode creerJeu() dans AbstractJeu ainsi que des méthodes initialiserNbTours(), creerCollectionDes() et creerCollectionJoueurs() dans AbstractJeu et Jeu. Ces méthodes servent à initialiser les attributs d'une nouvelle instance de Jeu qui respecte le patron de conception Méthode Template.
+    - Paquet Framework :
+      - Modification de l'interface Fabrique à la classe abstraite AbstractFabrique. Le fait que la classe créatrice soit une classe abstraite au lieu d'une interface ne change en rien l'implémentation de celle-ci. Aussi, c'est fait de cette façon dans les exemples du patron Méthode Fabrique.
+      - Changement des paramètres des méthodes creerJoueur() et creerJeu() de AbstractFabrique pour initialiser les scores des joueurs. Aussi, comme l'initialisation des attributs du jeu est déjà fait dans la classe Jeu elle-même, il n'est pas nécéssaire de le faire lors de l'appel du constructeur de celle-ci.
+    - Paquet BungoPlus :
+      - Correction d'une erreur dans la méthode calculerScoreTour() dans Strategie qui est supposée retourner un tableau d'objets pour les valeurs des points plutôt qu'un tableau de joueurs.
+      - Ajout des classes FenetrePrincipale, MenuFenetre et FenetreJeu dans le paquet du jeu Bunco+ pour représenter l'interface utilisateur. Inspirer-vous des fenêtres des laboratoires 1 et 2 pour le code. Aussi, la classe ApplicationBuncoPlus a été ajouté pour pouvoir lancer l'application.
+      - Suppression de la méthode creerIterateur() de CollectionDes et CollectionJoueurs puisque qu'on peut directement implémenter la méthode dans les classes abstraites AbstractCollectionDes et AbstractCollectionJoueurs.
+      - Suppression des attributs dans les classes du pacquet de Bungo+ puisque ces attributs sont déjà dans les classes abstraites du Framework.
+    - Paquet Tests :
+      - Suppression de la fenêtre FenetreTests dans le paquet Tests pour les tests unitaires. Eclipse offre déjà l'option de faire les tests unitaires dans l'IDE, faire une fenêtre pour ça serait simplement redondant.
+
 # LAB3 : Laboratoire 3 du cours de LOG121
 
 Message pour Carole et Richard :
