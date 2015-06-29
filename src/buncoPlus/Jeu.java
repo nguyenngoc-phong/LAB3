@@ -15,73 +15,73 @@ Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
+2015-06-26 Modification des mÈthodes initialiserNbTours(), creerCollectionDes(), creerCollectionJoueurs(), calculerScoreTour() et calculerVainqueurs.
+2015-06-29 Correction des mÈthodes creerCollectionJoueurs() et calculerScoreTour(). Modification du Javadoc.
 *******************************************************/  
 
 package buncoPlus;
 
-import framework.AbstractJeu;
-import framework.AbstractJoueur;
+import javax.swing.JOptionPane;
+
+import framework.*;
 
 /**
- * Description de la classe.
+ * Cette classe reprÈsente le jeu Bunco+.
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
 public class Jeu extends AbstractJeu {
 	
+	private Strategie strategie;
+
 	/**
-	 * Description de la m√©thode.
-	 * @param 
-	 * @return 
+	 * Initialise le nombre de tours du jeu.
 	 */
 	@Override
 	public void initialiserNbTours() {
-		// TODO √âcrire le code dans la m√©thode
-		
+		nbTours = 6;
 	}
 
 	/**
-	 * Description de la m√©thode.
-	 * @param 
-	 * @return 
+	 * CrÈe la collection de dÈs qu'utilise le jeu.
 	 */
 	@Override
 	public void creerCollectionDes() {
-		// TODO √âcrire le code dans la m√©thode
+		int unNbDes = 3;
+		int unNbFaces = 6;
 		
+		collectionDes = new CollectionDes(unNbDes, unNbFaces);
 	}
 
 	/**
-	 * Description de la m√©thode.
-	 * @param 
-	 * @return 
+	 * CrÈe la collection de joueurs qu'utilise le jeu.
 	 */
 	@Override
 	public void creerCollectionJoueurs() {
-		// TODO √âcrire le code dans la m√©thode
+		int nbJoueurs = 5;
+		String[] tabNoms = {"Joueur 1", "Joueur 2", "Joueur 3", "Joueur 4", "Joueur 5"};
 		
+		collectionJoueurs = new CollectionJoueurs(nbJoueurs, tabNoms);
 	}
 
 	/**
-	 * Description de la m√©thode.
-	 * @param 
-	 * @return 
+	 * Calcule le score du tour courant pour un joueur.
+	 * @return Un tableau d'objet qui contient le score du joueur en entier et un boolÈen qui dÈtermine s'il passe au suivant ou non.
 	 */
 	@Override
 	public Object[] calculerScoreTour() {
-		// TODO √âcrire le code dans la m√©thode
-		return null;
+		Object[] tabScores = strategie.calculerScoreTour(collectionDes.roulerDes(), nbTours);
+		return tabScores;
 	}
 
 	/**
-	 * Description de la m√©thode.
-	 * @param 
-	 * @return 
+	 * Trie le tableau de joueurs selon leur score respectif.
+	 * @return Le tableau de joueurs triÈ.
 	 */
 	@Override
-	public AbstractJoueur[] calculerVainqueur() {
-		// TODO √âcrire le code dans la m√©thode
-		return null;
+	public Joueur[] calculerVainqueur() {
+		Joueur[] tabVainqueurs = strategie.calculerVainqueur(collectionJoueurs.getTabJoueurs());
+		return tabVainqueurs;
 	}
 
 }

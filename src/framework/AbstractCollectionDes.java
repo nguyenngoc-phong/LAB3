@@ -16,12 +16,14 @@ Historique des modifications
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
 2015-06-26 Remplissage du contrat de l'interface CollectionToIterate. Modification du Javadoc.
-2015-06-26 Ajout de l'accesseur et mutateur du tableau tabDes.
+2015-06-29 Ajout de l'accesseur et mutateur du tableau tabDes. Ajout de la méthode roulerDes.
 *******************************************************/  
 
 package framework;
 
 import java.util.Iterator;
+
+import buncoPlus.De;
 
 /**
  * Description de la classe.
@@ -40,6 +42,17 @@ public abstract class AbstractCollectionDes implements CollectionToIterate {
 	 */
 	public void ajouterDe(AbstractDe unDe) {
 		// TODO Ã‰crire le code dans la mÃ©thode
+	}
+	
+	/**
+	 * Roule les dés de tabDes.
+	 * @return Le tableau de dés après avoir rouler les dés.
+	 */
+	public AbstractDe[] roulerDes() {
+		for(AbstractDe d : tabDes) {
+			d.setValeur((int)( 1 + 6 * Math.random()));
+		}
+		return tabDes;
 	}
 	
 	/**

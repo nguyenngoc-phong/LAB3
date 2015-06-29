@@ -15,28 +15,39 @@ Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
+2015-06-26 Ajout du constructeur de De.
+2015-06-29 Ajout de la redéfinition du constructeur de De avec la valeur du dé en plus comme paramètre.
 *******************************************************/  
 
 package buncoPlus;
 
-import framework.AbstractDe;
+import framework.*;
 
 /**
- * Description de la classe.
+ * Cette classe représente un dé.
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
 public class De extends AbstractDe {
 
 	/**
-	 * Description de la mÃ©thode.
-	 * @param 
-	 * @return 
+	 * Constructeur
+	 * @param unNbFaces : Le nombre de faces du dé.
 	 */
-	@Override
-	public int compareTo(AbstractDe o) {
-		// TODO Ã‰crire le code dans la mÃ©thode
-		return 0;
+	public De(int unNbFaces) {
+		nbFaces = unNbFaces;
+		valeur = 1;
 	}
 
+
+	/**
+	 * Constructeur
+	 * @param unNbFaces : Le nombre de faces du dé.
+	 * @param uneValeur : La valeur initiale du dé.
+	 */
+	public De(int unNbFaces, int uneValeur) {
+		nbFaces = unNbFaces;
+		valeur = uneValeur;
+	}
+	
 }

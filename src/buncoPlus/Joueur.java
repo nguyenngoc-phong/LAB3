@@ -15,28 +15,28 @@ Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
+2015-06-26 Ajout du constructeur de Joueur.
 *******************************************************/  
 
 package buncoPlus;
 
-import framework.AbstractJoueur;
+import framework.*;
 
 /**
- * Description de la classe.
+ * Cette classe repr�sente un joueur.
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
 public class Joueur extends AbstractJoueur {
 
 	/**
-	 * Description de la méthode.
-	 * @param 
-	 * @return 
+	 * Constructeur
+	 * @param unNom : Le nom du joueur
+	 * @param unScore : Le score initial du joueur
 	 */
-	@Override
-	public int compareTo(AbstractJoueur o) {
-		// TODO Écrire le code dans la méthode
-		return 0;
+	public Joueur(String unNom, int unScore) {
+		nom = unNom;
+		score = unScore;
 	}
 
 }

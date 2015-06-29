@@ -16,7 +16,7 @@ Historique des modifications
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
 2015-06-26 Remplissage du contrat de l'interface CollectionToIterate. Modification du Javadoc.
-2015-06-26 Ajout de l'accesseur et mutateur du tableau tabJoueurs.
+2015-06-29 Ajout de l'accesseur et mutateur du tableau tabJoueurs.
 *******************************************************/  
 
 package framework;
