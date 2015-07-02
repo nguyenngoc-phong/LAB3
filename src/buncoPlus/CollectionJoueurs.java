@@ -25,7 +25,7 @@ package buncoPlus;
 import framework.AbstractCollectionJoueurs;
 
 /**
- * Description de la classe.
+ * Cette classe définit une collection de joueurs.
  * @author Carole Fabeleu et Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
