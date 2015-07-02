@@ -3,20 +3,23 @@ Cours: LOG121
 Session: E2015
 Groupe: 01
 Projet: Laboratoire #3
-Ã‰tudiant(e)s: Carole Fabeleu, Dam-Hissey Kantchil et Ngoc-Phong Nguyen
+Étudiant(e)s: Carole Fabeleu, Dam-Hissey Kantchil et Ngoc-Phong Nguyen
               
               
 Professeur: Francis Cardinal
 Nom du fichier: AbstractCollectionJoueurs.java
-Date crÃ©Ã©: 2015-06-23
-Date dern. modif.: 2015-06-26
+Date créé: 2015-06-23
+Date dern. modif.: 2015-06-29
 *******************************************************
 Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
-2015-06-26 Remplissage du contrat de l'interface CollectionToIterate. Modification du Javadoc.
-2015-06-29 Ajout de l'accesseur et mutateur du tableau tabJoueurs.
+2015-06-26 Modification du Javadoc.
+2015-06-29 Ajout du mutateur du tableau tabJoueurs.
+@author Carole Fabeleu
+2015-06-27 Ajout des accesseurs de nbJoueurs et tabJoueurs et de la méthode ajouterJoueur(). Remplissage du contrat de
+			l'interface CollectionToIterate.
 *******************************************************/  
 
 package framework;
@@ -24,8 +27,9 @@ package framework;
 import java.util.Iterator;
 
 /**
- * Description de la classe.
- * @author Ngoc-Phong Nguyen
+ * Cette classe représente une collection abstraite de joueurs. Elle gère les méthodes d'accès au tableau de joueurs et d'ajouter
+ * un joueur au tableau. Une de ses méthodes permet de créer un itérateur qui la parcoure selon le patron itérateur.
+ * @author Carole Fabeleu et Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
 public abstract class AbstractCollectionJoueurs implements CollectionToIterate {
@@ -34,16 +38,21 @@ public abstract class AbstractCollectionJoueurs implements CollectionToIterate {
 	protected AbstractJoueur[] tabJoueurs;
 	
 	/**
-	 * Description de la mÃ©thode.
-	 * @param 
-	 * @return 
+	 * Ajoute un joueur au tableau de joueurs.
+	 * @param unJoueur : Le joueur à ajouter.
 	 */
 	public void ajouterJoueur(AbstractJoueur unJoueur) {
-		// TODO Ã‰crire le code dans la mÃ©thode
+		AbstractJoueur[] tabJoueursTemp = new AbstractJoueur[nbJoueurs + 1];
+		for(int i = 0; i < nbJoueurs; i++) {
+			tabJoueursTemp[i] = tabJoueurs[i];
+		}
+		tabJoueursTemp[nbJoueurs] = unJoueur;
+		tabJoueurs = tabJoueursTemp;
+		nbJoueurs++;
 	}
 	
 	/**
-	 * Créer un itérateur pour le tableau de joueurs.
+	 * Créer un itérateur qui va pouvoir parcourir le tableau de joueurs.
 	 * @return L'itérateur nouvellement créé du tableau de joueurs.
 	 */
 	@Override
@@ -53,8 +62,16 @@ public abstract class AbstractCollectionJoueurs implements CollectionToIterate {
 	}
 
 	/**
+	 * Accesseur du nombre de joueurs dans le tableau.
+	 * @return Le nombre de joueurs dans le tableau.
+	 */
+	public int getNbJoueurs() {
+		return nbJoueurs;
+	}
+
+	/**
 	 * Accesseur du tableau de joueurs.
-	 * @returns Le tableau de joueurs.
+	 * @return Le tableau de joueurs.
 	 */
 	public AbstractJoueur[] getTabJoueurs() {
 		return tabJoueurs;

@@ -3,12 +3,12 @@ Cours: LOG121
 Session: E2015
 Groupe: 01
 Projet: Laboratoire #3
-Ã‰tudiant(e)s: Carole Fabeleu, Dam-Hissey Kantchil et Ngoc-Phong Nguyen
+Étudiant(e)s: Carole Fabeleu, Dam-Hissey Kantchil et Ngoc-Phong Nguyen
               
               
 Professeur: Francis Cardinal
 Nom du fichier: De.java
-Date crÃ©Ã©: 2015-06-23
+Date créé: 2015-06-23
 Date dern. modif.: 2015-06-23
 *******************************************************
 Historique des modifications

@@ -22,7 +22,7 @@ Historique des modifications
 
 package buncoPlus;
 
-import framework.AbstractCollectionJoueurs;
+import framework.*;
 
 /**
  * Cette classe définit une collection de joueurs.
