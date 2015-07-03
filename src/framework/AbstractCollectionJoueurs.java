@@ -62,6 +62,26 @@ public abstract class AbstractCollectionJoueurs implements CollectionToIterate {
 	}
 
 	/**
+	 * Mutateur du score d'un joueur selectionné dans tabJoueurs selon son numéro de joueur
+	 * (Numéro du joueur 1 = 1, Numéro du joueur 2 = 2, etc.).
+	 * @param unNumJoueur : Le numéro du joueur que l'on cherche à modifier le score.
+	 * @param unNbPoints : Les points à ajouter au score du joueur selectionné.
+	 */
+	public void ajouterScore(int unNumJoueur, int unNbPoints) {
+		tabJoueurs[unNumJoueur - 1].ajouterScore(unNbPoints);
+	}
+
+	/**
+	 * Accesseur au score d'un joueur selectionné dans tabJoueurs selon son numéro de joueur
+	 * (Numéro du joueur 1 = 1, Numéro du joueur 2 = 2, etc.).
+	 * @param unNumJoueur : Le numéro du joueur dont on cherche le score.
+	 * @return Le score actuel du joueur selectionné.
+	 */
+	public int getScore(int unNumJoueur) {
+		return tabJoueurs[unNumJoueur - 1].getScore();
+	}
+
+	/**
 	 * Accesseur du nombre de joueurs dans le tableau.
 	 * @return Le nombre de joueurs dans le tableau.
 	 */
@@ -84,4 +104,5 @@ public abstract class AbstractCollectionJoueurs implements CollectionToIterate {
 	public void setTabJoueurs(AbstractJoueur[] unTabJoueurs) {
 		tabJoueurs = unTabJoueurs;
 	}
+	
 }

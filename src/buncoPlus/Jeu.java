@@ -32,13 +32,21 @@ import framework.*;
  */
 public class Jeu extends AbstractJeu {
 	
-	private Strategie strategie;
-
+	private Strategie strategie = new Strategie();
+	
+	/**
+	 * Constructeur
+	 */
+	public void Jeu() {
+	}
+	
 	/**
 	 * Initialise le nombre de tours du jeu.
 	 */
 	@Override
-	public void initialiserNbTours() {
+	public void initialiserTours() {
+		tourJoueur = 1;
+		numTour = 1;
 		nbTours = 6;
 	}
 
@@ -70,7 +78,23 @@ public class Jeu extends AbstractJeu {
 	 */
 	@Override
 	public Object[] calculerScoreTour() {
-		Object[] tabScores = strategie.calculerScoreTour(collectionDes.roulerDes(), nbTours);
+		Object[] tabScores = strategie.calculerScoreTour(collectionDes.roulerDes(), numTour);
+		
+		int score = (int) tabScores[0];
+		boolean passe = (boolean) tabScores[1];
+		
+		collectionJoueurs.ajouterScore(tourJoueur, score);
+		
+		if(passe) {
+			if(tourJoueur < 5) {
+				tourJoueur++;
+			}
+			else {
+				tourJoueur = 1;
+				numTour++;
+			}
+		}
+		
 		return tabScores;
 	}
 
@@ -84,4 +108,22 @@ public class Jeu extends AbstractJeu {
 		return tabVainqueurs;
 	}
 
+	/**
+	 * Accesseur du tableau de dés dans collectionDes.
+	 * @return Le tableau de dés de collectionDes.
+	 */
+	public De[] getTabDes() {
+		return (De[]) collectionDes.getTabDes();
+	}
+
+	/**
+	 * Accesseur du score d'un joueur dans collectionJoueurs selon son numéro de joueur
+	 * (Numéro du joueur 1 = 1, Numéro du joueur 2 = 2, etc.).
+	 * @param unNumJoueur : Le numéro du joueur que l'on cherche à modifier le score.
+	 * @return Le score du joueur selectionné.
+	 */
+	public int getScoreJoueur(int unNumJoueur) {
+		return collectionJoueurs.getScore(unNumJoueur);
+	}
+	
 }

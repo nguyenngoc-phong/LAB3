@@ -52,6 +52,14 @@ public abstract class AbstractJoueur implements Comparable<AbstractJoueur> {
 	}
 	
 	/**
+	 * Ajoute un certain nombre de points au score actuel du joueur.
+	 * @param unNbPoints : Le nombre de points que l'on désire ajouter au score du joueur.
+	 */
+	public void ajouterScore(int unNbPoints) {
+		score = score + unNbPoints;
+	}
+	
+	/**
 	 * Accesseur du nom du joueur.
 	 * @return Le nom du joueur.
 	 */
@@ -65,14 +73,6 @@ public abstract class AbstractJoueur implements Comparable<AbstractJoueur> {
 	 */
 	public int getScore() {
 		return score;
-	}
-	
-	/**
-	 * Mutateur du score du joueur.
-	 * @param unScore : Le nouveau score du joueur.
-	 */
-	public void setScore(int unScore) {
-		score = unScore;
 	}
 	
 }
