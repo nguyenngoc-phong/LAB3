@@ -9,7 +9,7 @@ Projet: Laboratoire #3
 Professeur: Francis Cardinal
 Nom du fichier: AbstractCollectionJoueurs.java
 Date créé: 2015-06-23
-Date dern. modif.: 2015-06-29
+Date dern. modif.: 2015-07-03
 *******************************************************
 Historique des modifications
 *******************************************************
@@ -17,6 +17,7 @@ Historique des modifications
 2015-06-23 Version initiale
 2015-06-26 Modification du Javadoc.
 2015-06-29 Ajout du mutateur du tableau tabJoueurs.
+2015-07-03 Ajout du méthodes ajouterScore() et getScore().
 @author Carole Fabeleu
 2015-06-27 Ajout des accesseurs de nbJoueurs et tabJoueurs et de la méthode ajouterJoueur(). Remplissage du contrat de
 			l'interface CollectionToIterate.

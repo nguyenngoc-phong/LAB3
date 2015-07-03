@@ -9,14 +9,19 @@ Projet: Laboratoire #3
 Professeur: Francis Cardinal
 Nom du fichier: Jeu.java
 Date crÃ©Ã©: 2015-06-23
-Date dern. modif.: 2015-06-23
+Date dern. modif.: 2015-07-03
 *******************************************************
 Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
-2015-06-26 Modification des méthodes initialiserNbTours(), creerCollectionDes(), creerCollectionJoueurs(), calculerScoreTour() et calculerVainqueurs.
+2015-06-26 Modification des méthodes initialiserNbTours(), creerCollectionDes(), creerCollectionJoueurs(),
+			calculerScoreTour() et calculerVainqueurs.
 2015-06-29 Correction des méthodes creerCollectionJoueurs() et calculerScoreTour(). Modification du Javadoc.
+2015-07-02 Modification de la méthode initialiserNbTours() par initialiserTours(). Ajout de l'initialisation des
+			attributs tourJoueur et numTour dans la méthode initialiserTours().
+2015-07-03 Ajout de l'initialisation de strategie et des accesseurs pour le tableau de dés et le score d'un joueur.
+			Correction de la méthode calculerScoreTour().
 *******************************************************/  
 
 package buncoPlus;

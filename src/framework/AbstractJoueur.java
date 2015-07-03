@@ -9,13 +9,14 @@ Projet: Laboratoire #3
 Professeur: Francis Cardinal
 Nom du fichier: AbstractJoueur.java
 Date créé: 2015-06-23
-Date dern. modif.: 2015-06-29
+Date dern. modif.: 2015-07-03
 *******************************************************
 Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
 2015-06-29 Ajout du mutateur de score.
+2015-07-03 Modification du mutateur de score pour ajouterScore().
 @author Carole Fabeleu
 2015-06-27 Ajout de la méthode compareTo() et des accesseurs de nom et score.
 *******************************************************/  
