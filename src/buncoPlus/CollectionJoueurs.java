@@ -9,15 +9,15 @@ Projet: Laboratoire #3
 Professeur: Francis Cardinal
 Nom du fichier: CollectionJoueurs.java
 Date créé: 2015-06-23
-Date dern. modif.: 2015-06-27
+Date dern. modif.: 2015-07-02
 *******************************************************
 Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
 2015-06-23 Version initiale
-2015-06-26 Ajout du constructeur.
-@author Carole Fabeleu
-2015-06-27 Modification du constructeur.
+2015-07-02 Modification du constructeur.
+@author Dam-Hissey Kantchil
+2015-07-01 Ajout du constructeur.
 *******************************************************/  
 
 package buncoPlus;
@@ -26,7 +26,7 @@ import framework.*;
 
 /**
  * Cette classe définit une collection de joueurs.
- * @author Carole Fabeleu et Ngoc-Phong Nguyen
+ * @author Carole Fabeleu, Dam-Hissey Kantchil et Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
 public class CollectionJoueurs extends AbstractCollectionJoueurs {
