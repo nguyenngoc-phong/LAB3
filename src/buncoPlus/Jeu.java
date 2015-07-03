@@ -79,7 +79,8 @@ public class Jeu extends AbstractJeu {
 
 	/**
 	 * Calcule le score du tour courant pour un joueur.
-	 * @return Un tableau d'objet qui contient le score du joueur en entier et un booléen qui détermine s'il passe au suivant ou non.
+	 * @return Un tableau d'objet qui contient le score du joueur en entier et un booléen qui détermine s'il passe
+	 * 			au suivant ou non.
 	 */
 	@Override
 	public Object[] calculerScoreTour() {
