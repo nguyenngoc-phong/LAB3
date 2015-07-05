@@ -20,7 +20,7 @@ Historique des modifications
 2015-07-01 Ajout des compasantes fenetreJeu et menu et du constructeur de FenetrePrincipale.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import java.awt.BorderLayout;
 import java.beans.*;
@@ -37,7 +37,7 @@ public class FenetrePrincipale extends JFrame implements PropertyChangeListener 
 	
 	private static final long serialVersionUID = -9185075273229847740L;
 	
-	private Jeu jeu;
+	private JeuBunco jeu;
 	
 	private FenetreJeu fenetreJeu;
 	private MenuFenetre menu;
@@ -47,7 +47,7 @@ public class FenetrePrincipale extends JFrame implements PropertyChangeListener 
 	 */
 	public FenetrePrincipale() {
 		this.setTitle("Bunco+");
-		jeu = new Jeu();
+		jeu = new JeuBunco();
 		menu = new MenuFenetre(jeu);
 		this.setLayout(new BorderLayout());
 		this.add(menu);
@@ -74,15 +74,15 @@ public class FenetrePrincipale extends JFrame implements PropertyChangeListener 
 		else if(evt.getPropertyName().equals("ROULER_DES")) {
 			jeu.roulerDes();
 			jeu.calculerScoreTour();
-			De[] tabDes = jeu.getTabDes();
+			DeConcret[] tabDes = jeu.getTabDes();
 			int score = (int) jeu.getScoreJoueur(jeu.getTourJoueur());
 			int tourJoueur = (int) jeu.getTourJoueur();
 			int numTour = (int) jeu.getNumTour();
 			
 			if(numTour <= 6) {
-				int i = 1;
-				for(De d : tabDes) {
-					fenetreJeu.getTirage().setCell(i++, d.getValeur());
+				int index = 1;
+				for(DeConcret d : tabDes) {
+					fenetreJeu.getTirage().setCell(index++, d.getValeur());
 				}
 				
 				if(tourJoueur > 1) {
@@ -100,8 +100,8 @@ public class FenetrePrincipale extends JFrame implements PropertyChangeListener 
 				Joueur[] tabVainqueurs = jeu.calculerVainqueur();
 				String message = "Fin de la partie. Voici les scores finaux :\n";
 				
-				for(Joueur j : tabVainqueurs) {
-					message = message + j.getNom() + ": " + j.getScore() + " pts.\n";
+				for(Joueur joueur : tabVainqueurs) {
+					message = message + joueur.getNom() + ": " + joueur.getScore() + " pts.\n";
 				}
 				
 				JOptionPane.showMessageDialog(null, message, "Fin de la partie", JOptionPane.INFORMATION_MESSAGE);

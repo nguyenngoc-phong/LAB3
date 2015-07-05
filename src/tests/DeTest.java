@@ -22,8 +22,10 @@ Historique des modifications
 
 package tests;
 
-import buncoPlus.*;
+import buncoplus.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 /**
@@ -34,8 +36,8 @@ import static org.junit.Assert.*;
 public class DeTest {
 
 	private Fabrique fabrique;
-	private De de1;
-	private De de6;
+	private DeConcret de1;
+	private DeConcret de6;
 
 	/**
 	 * Initialisation des attributs à faire avant de commencer les test unitaires.

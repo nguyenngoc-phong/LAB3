@@ -20,7 +20,7 @@ Historique des modifications
 2015-07-01 Ajout du constructeur.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import framework.*;
 

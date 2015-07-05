@@ -20,7 +20,7 @@ Historique des modifications
 2015-07-01 Ajout du constructeur.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import framework.*;
 
@@ -40,7 +40,7 @@ public class CollectionDes extends AbstractCollectionDes {
 	 */
 	public CollectionDes(int unNbDes, int unNbFaces) {
 		nbDes = unNbDes;
-		tabDes = new De[unNbDes];
+		tabDes = new DeConcret[unNbDes];
 		
 		for(int i = 0; i < nbDes; i++) {
 			tabDes[i] = fabrique.creerDe(unNbFaces);

@@ -19,7 +19,7 @@ Historique des modifications
 2015-06-29 Ajout du constructeur et de la méthode creerDe rédefinie avec la valeur du dé en paramètre.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import framework.*;
 
@@ -43,8 +43,8 @@ public class Fabrique extends AbstractFabrique {
 	 * @return Une instance de la la classe De.
 	 */
 	@Override
-	public De creerDe(int unNbFaces) {
-		De unDe = new De(unNbFaces);
+	public DeConcret creerDe(int unNbFaces) {
+		DeConcret unDe = new DeConcret(unNbFaces);
 		return unDe;
 	}
 
@@ -54,8 +54,8 @@ public class Fabrique extends AbstractFabrique {
 	 * @param uneValeur : la valeur initial  du dé.
 	 * @return Une instance de la la classe AbstractDe.
 	 */
-	public De creerDe(int unNbFaces, int uneValeur) {
-		De unDe = new De(unNbFaces, uneValeur);
+	public DeConcret creerDe(int unNbFaces, int uneValeur) {
+		DeConcret unDe = new DeConcret(unNbFaces, uneValeur);
 		return unDe;
 	};
 
@@ -76,8 +76,8 @@ public class Fabrique extends AbstractFabrique {
 	 * @return Une instance de la la classe Jeu.
 	 */
 	@Override
-	public Jeu creerJeu() {
-		Jeu unJeu = new Jeu();
+	public JeuBunco creerJeu() {
+		JeuBunco unJeu = new JeuBunco();
 		return unJeu;
 	}
 

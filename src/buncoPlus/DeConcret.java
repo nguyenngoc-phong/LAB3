@@ -19,7 +19,7 @@ Historique des modifications
 2015-06-29 Ajout de la redéfinition du constructeur de De avec la valeur du dé en plus comme paramètre.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import framework.*;
 
@@ -28,13 +28,13 @@ import framework.*;
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
-public class De extends AbstractDe {
+public class DeConcret extends AbstractDe {
 
 	/**
 	 * Constructeur
 	 * @param unNbFaces : Le nombre de faces du dé.
 	 */
-	public De(int unNbFaces) {
+	public DeConcret(int unNbFaces) {
 		nbFaces = unNbFaces;
 		valeur = 1;
 	}
@@ -45,7 +45,7 @@ public class De extends AbstractDe {
 	 * @param unNbFaces : Le nombre de faces du dé.
 	 * @param uneValeur : La valeur initiale du dé.
 	 */
-	public De(int unNbFaces, int uneValeur) {
+	public DeConcret(int unNbFaces, int uneValeur) {
 		nbFaces = unNbFaces;
 		valeur = uneValeur;
 	}

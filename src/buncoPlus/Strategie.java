@@ -11,6 +11,13 @@ Nom du fichier: Strategie.java
 Date crÃ©Ã©: 2015-06-23
 Date dern. modif.: 2015-07-02
 *******************************************************
+L'algorithme de tri utilisé pour trier les joueurs dans la méthode
+calculerVainqueurs() est basé sur l'exemple d'algorithme de tri de type insertion
+sur Internet de Jon Bentley sur Wikpédia sur la page suivante :
+
+https://en.wikipedia.org/wiki/Insertion_sort
+
+*******************************************************
 Historique des modifications
 *******************************************************
 @author Ngoc-Phong Nguyen
@@ -20,14 +27,14 @@ Historique des modifications
 2015-07-01 Ajout des méthodes calculerScoreTour() et calculerVainqueur().
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import framework.*;
 
 /**
  * Cette classe concrète permet de calculer le score d'un joueur après avoir lancer des dés selon les règles du jeu
  * Bunco+ et de trier les joueurs selon leur score en ordre décroissant. Cette classe suit le patron "Stratégie".
- * @author Ngoc-Phong Nguyen
+ * @author Dam-Hissey Kantchil et Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
 public class Strategie implements IStrategie {
@@ -98,12 +105,11 @@ public class Strategie implements IStrategie {
 					tabJoueurs[j] = joueurTemp;
 				}
 				// Si les scores des joueurs sont égales, ceux-ci sont triés selon leurs noms
-				else if(tabJoueurs[j].getScore() == tabJoueurs[j - 1].getScore()) {
-					if(tabJoueurs[j].getNom().compareTo(tabJoueurs[j - 1].getNom()) == -1) {
-						joueurTemp = tabJoueurs[j - 1];
-						tabJoueurs[j - 1] = tabJoueurs[j];
-						tabJoueurs[j] = joueurTemp;
-					}
+				else if(tabJoueurs[j].getScore() == tabJoueurs[j - 1].getScore() &&
+						tabJoueurs[j].getNom().compareTo(tabJoueurs[j - 1].getNom()) == -1) {
+					joueurTemp = tabJoueurs[j - 1];
+					tabJoueurs[j - 1] = tabJoueurs[j];
+					tabJoueurs[j] = joueurTemp;
 				}
 			}
 		}

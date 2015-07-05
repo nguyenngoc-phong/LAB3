@@ -22,8 +22,10 @@ Historique des modifications
 
 package tests;
 
-import buncoPlus.*;
+import buncoplus.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 /**

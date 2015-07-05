@@ -20,7 +20,7 @@ Historique des modifications
 2015-07-01 Ajout des différents menus (Constructeur + Méthodes addMenuJeu() et addMenuDes()).
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import java.awt.event.*;
 import java.beans.PropertyChangeListener;
@@ -41,7 +41,7 @@ public class MenuFenetre extends JMenuBar {
 	 * Constructeur
 	 * @param jeu : L'objet jeu de l'application.
 	 */
-	public MenuFenetre(Jeu jeu) {
+	public MenuFenetre(JeuBunco jeu) {
 		addMenuJeu();
 		addMenuDes();
 	}

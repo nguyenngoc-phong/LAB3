@@ -22,7 +22,7 @@ Historique des modifications
 2015-07-01 Ajout de la classe interne PanelBoutons et du constructeur de FenetreJeu.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import java.awt.*;
 
@@ -36,7 +36,7 @@ import javax.swing.*;
 public class FenetreJeu extends JComponent {
 	
 	private static final long serialVersionUID = 1316305658354433025L;
-	public static final Dimension dimension = new Dimension(350,150);
+	public static final Dimension DIMENSION = new Dimension(350,150);
 	private PanelBoutons tirage;
 	private PanelBoutons joueur;
 	private PanelBoutons score;
@@ -60,7 +60,7 @@ public class FenetreJeu extends JComponent {
 		this.add(score);
 		this.add(tour);	
 		
-		this.setPreferredSize(dimension);
+		this.setPreferredSize(DIMENSION);
 	}
 
 	/**
@@ -96,8 +96,8 @@ public class FenetreJeu extends JComponent {
 		 * Accesseur de la valeur affichée dans l'une des cellules.
 		 * @return Un entier correspondant à la valeur affichée.
 		 */
-		public int getCell(int i) {
-			return Integer.parseInt(panel[i].getText());
+		public int getCell(int index) {
+			return Integer.parseInt(panel[index].getText());
 		}
 
 		/**

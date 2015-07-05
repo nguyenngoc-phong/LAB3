@@ -19,7 +19,7 @@ Historique des modifications
 2015-07-01 Ajout de méthode main() et du constructeur d'ApplicationBuncoPlus.
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 /**
  * Cette classe permet de lancer l'application Bunco+ dans son ensemble.

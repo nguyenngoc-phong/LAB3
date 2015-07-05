@@ -23,8 +23,10 @@ Historique des modifications
 
 package tests;
 
-import buncoPlus.*;
+import buncoplus.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 /**
@@ -35,8 +37,8 @@ import static org.junit.Assert.*;
 public class JeuTest {
 	
 	private Fabrique fabrique;
-	private Jeu jeu;
-	private De de1, de5, de6;
+	private JeuBunco jeu;
+	private DeConcret de1, de5, de6;
 	private Joueur joueur1, joueur2, joueur3, joueur4, joueur5;
 	
 	/**
@@ -66,7 +68,7 @@ public class JeuTest {
 	 */
 	@Test
 	public void scoreBuncoTest() {
-		De[] unTabDes = {de1, de1, de1};
+		DeConcret[] unTabDes = {de1, de1, de1};
 		jeu.setTabDes(unTabDes);
 		jeu.setNbTours(1);
 		Object[] tabScores = jeu.calculerScoreTour();
@@ -80,7 +82,7 @@ public class JeuTest {
 	 */
 	@Test
 	public void scoreTripletest() {
-		De[] unTabDes = {de6, de6, de6};
+		DeConcret[] unTabDes = {de6, de6, de6};
 		jeu.setTabDes(unTabDes);
 		jeu.setNbTours(1);
 		Object[] tabScores = jeu.calculerScoreTour();
@@ -94,7 +96,7 @@ public class JeuTest {
 	 */
 	@Test
 	public void scoreDeuxTest() {
-		De[] unTabDes = {de1, de1, de6};
+		DeConcret[] unTabDes = {de1, de1, de6};
 		jeu.setTabDes(unTabDes);
 		jeu.setNbTours(1);
 		Object[] tabScores = jeu.calculerScoreTour();
@@ -108,7 +110,7 @@ public class JeuTest {
 	 */
 	@Test
 	public void scoreUnTest() {
-		De[] unTabDes = {de1, de6, de6};
+		DeConcret[] unTabDes = {de1, de6, de6};
 		jeu.setTabDes(unTabDes);
 		jeu.setNbTours(1);
 		Object[] tabScores = jeu.calculerScoreTour();
@@ -122,7 +124,7 @@ public class JeuTest {
 	 */
 	@Test
 	public void scoreZeroTest() {
-		De[] unTabDes = {de5, de6, de6};
+		DeConcret[] unTabDes = {de5, de6, de6};
 		jeu.setTabDes(unTabDes);
 		jeu.setNbTours(1);
 		Object[] tabScores = jeu.calculerScoreTour();

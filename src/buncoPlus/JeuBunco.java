@@ -7,7 +7,7 @@ Projet: Laboratoire #3
               
               
 Professeur: Francis Cardinal
-Nom du fichier: Jeu.java
+Nom du fichier: JeuBunco.java
 Date crÃ©Ã©: 2015-06-23
 Date dern. modif.: 2015-07-03
 *******************************************************
@@ -24,7 +24,7 @@ Historique des modifications
 			Correction de la méthode calculerScoreTour().
 *******************************************************/  
 
-package buncoPlus;
+package buncoplus;
 
 import framework.*;
 
@@ -33,14 +33,14 @@ import framework.*;
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
-public class Jeu extends AbstractJeu {
+public class JeuBunco extends AbstractJeu {
 	
 	private Strategie strategie = new Strategie();
 	
 	/**
 	 * Constructeur
 	 */
-	public Jeu() {
+	public JeuBunco() {
 	}
 	
 	/**
@@ -116,8 +116,8 @@ public class Jeu extends AbstractJeu {
 	 * Accesseur du tableau de dés dans collectionDes.
 	 * @return Le tableau de dés de collectionDes.
 	 */
-	public De[] getTabDes() {
-		return (De[]) collectionDes.getTabDes();
+	public DeConcret[] getTabDes() {
+		return (DeConcret[]) collectionDes.getTabDes();
 	}
 
 	/**
