@@ -96,8 +96,8 @@ public class FenetreJeu extends JComponent {
 		 * Accesseur de la valeur affichée dans l'une des cellules.
 		 * @return Un entier correspondant à la valeur affichée.
 		 */
-		public int getCell(int index) {
-			return Integer.parseInt(panel[index].getText());
+		public int getCell(int num) {
+			return Integer.parseInt(panel[num].getText());
 		}
 
 		/**
