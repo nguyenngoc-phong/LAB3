@@ -77,7 +77,7 @@ public class JoueurTest {
 	 * Vérifie si la méthode retourne bien 0 comme valeur.
 	 */
 	@Test
-	public void memeScore() {
+	public void memeScoreTest() {
 		joueur2.setScore(21);
 		assertTrue(joueur1.compareTo(joueur2) == 0);
 	}
@@ -87,7 +87,7 @@ public class JoueurTest {
 	 * Vérifie si la méthode attrape bien l'exception.
 	 */
 	@Test(expected = NullPointerException.class)
-	public void deNullTest() {
+	public void scoreNullTest() {
 		joueur1.compareTo(null);
 	}
 
