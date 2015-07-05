@@ -76,4 +76,12 @@ public abstract class AbstractJoueur implements Comparable<AbstractJoueur> {
 		return score;
 	}
 	
+	/**
+	 * Mutateur du score du joueur.
+	 * @param unScore : Le nouveau score du joueur.
+	 */
+	public void setScore(int unScore) {
+		this.score = unScore;
+	}
+	
 }
