@@ -26,8 +26,6 @@ Historique des modifications
 
 package buncoPlus;
 
-import javax.swing.JOptionPane;
-
 import framework.*;
 
 /**
@@ -42,7 +40,7 @@ public class Jeu extends AbstractJeu {
 	/**
 	 * Constructeur
 	 */
-	public void Jeu() {
+	public Jeu() {
 	}
 	
 	/**
@@ -84,10 +82,10 @@ public class Jeu extends AbstractJeu {
 	 */
 	@Override
 	public Object[] calculerScoreTour() {
-		Object[] tabScores = strategie.calculerScoreTour(collectionDes.roulerDes(), numTour);
+		Object[] tabScores = strategie.calculerScoreTour(collectionDes.getTabDes(), numTour);
 		
-		int score = (int) tabScores[0];
-		boolean passe = (boolean) tabScores[1];
+		int score = (Integer) tabScores[0];
+		boolean passe = (Boolean) tabScores[1];
 		
 		collectionJoueurs.ajouterScore(tourJoueur, score);
 		

@@ -68,7 +68,7 @@ public abstract class AbstractCollectionDes implements CollectionToIterate {
 	 */
 	@Override
 	public Iterator<Object> creerIterateur() {
-		ArrayIterator iterateurDes = new ArrayIterator<AbstractDe>(tabDes);
+		ArrayIterator iterateurDes = new ArrayIterator(tabDes);
 		return iterateurDes;
 	}
 	

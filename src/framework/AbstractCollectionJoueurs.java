@@ -58,7 +58,7 @@ public abstract class AbstractCollectionJoueurs implements CollectionToIterate {
 	 */
 	@Override
 	public Iterator<Object> creerIterateur() {
-		ArrayIterator iterateurJoueurs = new ArrayIterator<AbstractJoueur>(tabJoueurs);
+		ArrayIterator iterateurJoueurs = new ArrayIterator(tabJoueurs);
 		return iterateurJoueurs;
 	}
 

@@ -72,7 +72,8 @@ public class FenetrePrincipale extends JFrame implements PropertyChangeListener 
 			fenetreJeu.rafraichir();
 		}
 		else if(evt.getPropertyName().equals("ROULER_DES")) {
-			Object[] tabScores = jeu.calculerScoreTour();
+			jeu.roulerDes();
+			jeu.calculerScoreTour();
 			De[] tabDes = jeu.getTabDes();
 			int score = (int) jeu.getScoreJoueur(jeu.getTourJoueur());
 			int tourJoueur = (int) jeu.getTourJoueur();

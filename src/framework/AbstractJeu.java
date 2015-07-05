@@ -73,7 +73,14 @@ public abstract class AbstractJeu {
 	 * @return Le tableau de joueurs trié selon les critères.
 	 */
 	public abstract AbstractJoueur[] calculerVainqueur();
-
+	
+	/**
+	 * Rouler tous les dés dans collectionDes.
+	 * @return Le tableau des dés roulés.
+	 */
+	public AbstractDe[] roulerDes() {
+		return collectionDes.roulerDes();
+	}
 	/**
 	 * Accesseur le tour du joueur courant. En d'autres mots, qui est le prochain à jouer.
 	 * @return Le tour du joueur courant.

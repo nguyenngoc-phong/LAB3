@@ -29,7 +29,7 @@ import java.util.Iterator;
  * @author Ngoc-Phong Nguyen
  * @date 2015/06/23
  */
-public class ArrayIterator<Object> implements Iterator<Object> {
+public class ArrayIterator implements Iterator<Object> {
 
 	private Object[] items;
 	private int position = 0;
